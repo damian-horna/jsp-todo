@@ -11,7 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Your todos:</h1>
+<h1>Hello ${sessionScope.user.login}!</h1>
+<h2>Your todos:</h2>
 
 </body>
 </html>
