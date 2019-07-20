@@ -13,6 +13,8 @@
 <body>
 <h1>Hello ${sessionScope.user.login}!</h1>
 <h2>Your todos:</h2>
-
+<form action="logout">
+    <input type="submit" value="Log out">
+</form>
 </body>
 </html>
