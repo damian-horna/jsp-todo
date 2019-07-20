@@ -1,5 +1,7 @@
 package com.jsp.servlet;
 
+import com.jsp.model.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +15,9 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         if (login.equals("admin") && password.equals("admin")){
+            User user = new User(login, password);
+            request.getSession().setAttribute("user", user);
+
             response.sendRedirect("todos.jsp");
         } else {
             response.sendRedirect("index.jsp");
