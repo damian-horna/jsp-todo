@@ -13,6 +13,10 @@
 <body>
 <h1>Hello ${sessionScope.user.login}!</h1>
 <h2>Your todos:</h2>
+<form action="todos/add" method="post">
+    Todo: <input type="text" name="todoText">
+    <input type="submit" value="Add">
+</form>
 <form action="logout">
     <input type="submit" value="Log out">
 </form>
