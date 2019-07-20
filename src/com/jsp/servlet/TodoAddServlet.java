@@ -14,6 +14,7 @@ import java.util.List;
 @WebServlet(name = "TodoAddServlet", urlPatterns = "/todos/add")
 public class TodoAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         List<Todo> todos = (List<Todo>) request.getSession().getAttribute("todos");
         String todoText = request.getParameter("todoText");
 
