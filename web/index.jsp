@@ -11,6 +11,10 @@
     <title>$Title$</title>
   </head>
   <body>
+
+  <% if(session.getAttribute("user") != null) {
+    response.sendRedirect("todos.jsp");
+  }%>
   <form action="login" method="post">
     Login: <input name="login" type="text">
     <br/>
