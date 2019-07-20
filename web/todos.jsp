@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.jsp.model.Todo" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: apilia
   Date: 7/20/2019
@@ -13,6 +14,17 @@
 <body>
 <h1>Hello ${sessionScope.user.login}!</h1>
 <h2>Your todos:</h2>
+<%
+    List<Todo> todos = (List<Todo>) request.getSession().getAttribute("todos");
+    if (todos != null){
+        for(Todo todo : todos){
+%>
+    <%= todo.getText() %>
+    <br/>
+<%
+        }
+    }
+%>
 <form action="todos/add" method="post">
     Todo: <input type="text" name="todoText">
     <input type="submit" value="Add">
